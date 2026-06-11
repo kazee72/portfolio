@@ -3,266 +3,172 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Projekte — Joel Bonini Portfolio</title>
+  <title>kazee72 — projects</title>
   <link rel="stylesheet" href="css/tokens.css">
   <link rel="stylesheet" href="css/base.css">
-  <link rel="stylesheet" href="css/layout.css">
-  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/terminal.css">
 </head>
 
-<body class="shell">
+<!--
+  ARCHITECTURE NOTE
+  Real semantic page — project articles exist in the DOM for
+  accessibility and no-JS access. The terminal shell is a visual
+  skin layered on top; js/projekte.js populates term-output.
+-->
+
+<body class="term-shell" data-base="." data-parent="index.html">
+
+  <!-- Site title for screen readers — visually hidden -->
+  <h1 class="visually-hidden">Projects — kazee72 Portfolio</h1>
 
   <!-- ══════════════════════════════════════
-       HEADER — title bar + tab bar
+       WINDOW TITLE BAR
        ══════════════════════════════════════ -->
-  <header class="shell__header">
-
-    <div class="titlebar" role="presentation">
-
-      <div class="titlebar__controls" aria-hidden="true">
-        <span class="dot dot--close"></span>
-        <span class="dot dot--minimize"></span>
-        <span class="dot dot--maximize"></span>
-      </div>
-
-      <span class="titlebar__filename">projekte.html — Portfolio</span>
-
-      <button
-        class="sidebar-toggle"
-        id="sidebar-toggle"
-        type="button"
-        aria-label="Toggle file explorer"
-        aria-expanded="false"
-        aria-controls="sidebar"
-      >
-        <svg width="18" height="18" viewBox="0 0 18 18" aria-hidden="true" fill="none">
-          <rect x="2" y="3.5"  width="14" height="1.5" rx="0.5" fill="currentColor"/>
-          <rect x="2" y="8.25" width="14" height="1.5" rx="0.5" fill="currentColor"/>
-          <rect x="2" y="13"   width="14" height="1.5" rx="0.5" fill="currentColor"/>
-        </svg>
-      </button>
-    </div>
-
-    <nav class="tabbar" aria-label="Open files">
-      <a href="index.html" class="tab">
-        <span class="tab__icon" aria-hidden="true">◇</span>
-        index.html
-      </a>
-      <a href="projekte.html" class="tab tab--active" aria-current="page">
-        <span class="tab__icon" aria-hidden="true">◆</span>
-        projekte.html
-      </a>
-      <a href="kontakt.html" class="tab">
-        <span class="tab__icon" aria-hidden="true">◇</span>
-        kontakt.html
-      </a>
-    </nav>
-
+  <header class="win-bar" role="banner">
+    <span class="win-bar__title" aria-hidden="true">joel@portfolio: ~/projects</span>
   </header>
 
 
   <!-- ══════════════════════════════════════
-       SIDEBAR — file explorer / primary nav
+       MAIN — terminal output + prompt + chips
        ══════════════════════════════════════ -->
-  <aside class="shell__sidebar" id="sidebar" aria-label="File explorer">
+  <main class="term-body" id="term-body" aria-label="Terminal">
 
-    <div class="explorer">
+    <div
+      class="term-output"
+      id="term-output"
+      role="log"
+      aria-live="polite"
+      aria-label="Terminal output"
+    ></div>
 
-      <p class="explorer__label" aria-hidden="true">EXPLORER</p>
+    <!--
+      Semantic project list — screen reader / no-JS fallback.
+      JS hides this via the hidden attribute once the terminal boots.
+    -->
+    <section id="proj-fallback" aria-label="Projects">
+      <h2 class="visually-hidden">Projects</h2>
 
-      <details class="explorer__folder" open>
-        <summary class="explorer__folder-name">
-          <span class="explorer__folder-arrow" aria-hidden="true">▾</span>
-          PORTFOLIO
-        </summary>
+      <article>
+        <h3><a href="projekt/portygon.html">portygon</a></h3>
+        <p>Async TCP port scanner with banner grabbing.</p>
+        <p>Category: security &mdash; rust, tokio</p>
+      </article>
 
-        <nav class="explorer__nav" aria-label="Site navigation">
-          <a href="index.html" class="explorer__link">
-            <span class="explorer__icon" aria-hidden="true">◇</span>
-            index.html
-          </a>
-          <a href="projekte.html" class="explorer__link explorer__link--active" aria-current="page">
-            <span class="explorer__icon" aria-hidden="true">◆</span>
-            projekte.html
-          </a>
-          <a href="kontakt.html" class="explorer__link">
-            <span class="explorer__icon" aria-hidden="true">◇</span>
-            kontakt.html
-          </a>
-        </nav>
+      <article>
+        <h3><a href="projekt/hydropress.html">hydropress</a></h3>
+        <p>Huffman compression CLI with a custom .h2 format.</p>
+        <p>Category: tools &mdash; rust</p>
+      </article>
 
-      </details>
+      <article>
+        <h3><a href="projekt/acrux.html">acrux</a></h3>
+        <p>Custom language with a tree-walking interpreter.</p>
+        <p>Category: systems &mdash; rust</p>
+      </article>
+
+      <article>
+        <h3><a href="projekt/gitpulse.html">gitpulse</a></h3>
+        <p>Scans local git repos for health status.</p>
+        <p>Category: tools &mdash; bash</p>
+      </article>
+
+      <article>
+        <h3><a href="projekt/dotfiles.html">dotfiles</a></h3>
+        <p>macOS tiling rice: AeroSpace + SketchyBar + kitty.</p>
+        <p>Category: tools &mdash; lua, config</p>
+      </article>
+
+      <article>
+        <h3><a href="projekt/frieren.html">frieren</a></h3>
+        <p>Discord bot that automates weekly T2L reports.</p>
+        <p>Category: bots &mdash; typescript, discord.js, sqlite</p>
+      </article>
+
+      <article>
+        <h3><a href="projekt/miriel.html">miriel</a></h3>
+        <p>Discord wiki bot for Elden Ring items &amp; NPCs.</p>
+        <p>Category: bots &mdash; typescript</p>
+      </article>
+
+      <article>
+        <h3><a href="projekt/linked-list.html">linked-list</a></h3>
+        <p>Singly + doubly linked lists in Java.</p>
+        <p>Category: systems &mdash; java</p>
+      </article>
+
+      <article>
+        <h3><a href="projekt/parity-check.html">parity-check</a></h3>
+        <p>Byte-for-byte file comparison.</p>
+        <p>Category: systems &mdash; c</p>
+      </article>
+
+      <article>
+        <h3><a href="projekt/securevideo.html">securevideo</a></h3>
+        <p>Dual-SSD camera backup with checksum verify.</p>
+        <p>Category: security &mdash; in progress</p>
+      </article>
+    </section>
+
+    <!-- Live prompt line -->
+    <div class="term-prompt-line">
+      <span class="term-prompt-sign" aria-hidden="true">❯</span>
+      <label for="term-input" class="visually-hidden">Enter a command</label>
+      <input
+        class="term-input"
+        id="term-input"
+        type="text"
+        autocomplete="off"
+        autocorrect="off"
+        autocapitalize="off"
+        spellcheck="false"
+        aria-label="Command input"
+        enterkeyhint="send"
+      >
     </div>
 
-  </aside>
-
-
-  <!-- ══════════════════════════════════════
-       MAIN — project grid
-       ══════════════════════════════════════ -->
-  <main class="shell__main" id="main-content">
-
-    <h1 class="page-heading">
-      <span class="page-heading__comment" aria-hidden="true">// </span>projekte
-    </h1>
-
-    <section aria-label="Project list">
-
-      <!-- Filter toolbar
-           Progressive enhancement: without JS, aria-pressed states are never
-           updated and no cards are hidden — every card stays visible.    -->
-      <div class="filter-bar" role="group" aria-label="Filter projects by category">
-        <button class="filter-btn filter-btn--active" type="button" aria-pressed="true"  data-filter="all">All</button>
-        <button class="filter-btn"                    type="button" aria-pressed="false" data-filter="rust">Rust</button>
-        <button class="filter-btn"                    type="button" aria-pressed="false" data-filter="security">Security</button>
-        <button class="filter-btn"                    type="button" aria-pressed="false" data-filter="web">Web</button>
-        <button class="filter-btn"                    type="button" aria-pressed="false" data-filter="tools">Tools</button>
-      </div>
-
-      <!-- Project cards
-           To add a project: copy one <li>…</li> block, fill in the fields,
-           set data-category to one of: rust | security | web | tools        -->
-      <ul class="projects-grid" aria-label="Projects">
-
-        <!-- ─── Project Alpha ─── -->
-        <li>
-          <article class="project-card" data-category="web">
-            <a href="projekt/project-alpha.html" class="card__link">
-              <div class="card__header">
-                <span class="card__name">
-                  <span class="card__name-icon" aria-hidden="true">◇</span>
-                  Project Alpha
-                </span>
-                <span class="card__lang-tag card__lang-tag--web">Web</span>
-              </div>
-              <p class="card__desc">
-                A responsive web application with dynamic interactions
-                and server-side rendering. Placeholder — real content
-                coming soon.
-              </p>
-              <div class="card__tags" aria-label="Technologies used">
-                <span class="card__tag card__tag--accent">HTML</span>
-                <span class="card__tag card__tag--accent">CSS</span>
-                <span class="card__tag card__tag--orange">JavaScript</span>
-              </div>
-            </a>
-          </article>
-        </li>
-
-        <!-- ─── Project Beta ─── -->
-        <li>
-          <article class="project-card" data-category="rust">
-            <a href="projekt/project-beta.html" class="card__link">
-              <div class="card__header">
-                <span class="card__name">
-                  <span class="card__name-icon" aria-hidden="true">◇</span>
-                  Project Beta
-                </span>
-                <span class="card__lang-tag card__lang-tag--rust">Rust</span>
-              </div>
-              <p class="card__desc">
-                A performant CLI tool for parsing and transforming
-                structured data, compiled to a single binary. Placeholder.
-              </p>
-              <div class="card__tags" aria-label="Technologies used">
-                <span class="card__tag card__tag--orange">Rust</span>
-                <span class="card__tag card__tag--purple">WebAssembly</span>
-                <span class="card__tag card__tag--green">CLI</span>
-              </div>
-            </a>
-          </article>
-        </li>
-
-        <!-- ─── Project Gamma ─── -->
-        <li>
-          <article class="project-card" data-category="security">
-            <a href="projekt/project-gamma.html" class="card__link">
-              <div class="card__header">
-                <span class="card__name">
-                  <span class="card__name-icon" aria-hidden="true">◇</span>
-                  Project Gamma
-                </span>
-                <span class="card__lang-tag card__lang-tag--security">Security</span>
-              </div>
-              <p class="card__desc">
-                An automated reconnaissance toolkit that aggregates
-                and normalises findings from multiple scanners. Placeholder.
-              </p>
-              <div class="card__tags" aria-label="Technologies used">
-                <span class="card__tag card__tag--accent">Python</span>
-                <span class="card__tag card__tag--green">Bash</span>
-                <span class="card__tag card__tag--purple">Nmap</span>
-              </div>
-            </a>
-          </article>
-        </li>
-
-        <!-- ─── Project Delta ─── -->
-        <li>
-          <article class="project-card" data-category="tools">
-            <a href="projekt/project-delta.html" class="card__link">
-              <div class="card__header">
-                <span class="card__name">
-                  <span class="card__name-icon" aria-hidden="true">◇</span>
-                  Project Delta
-                </span>
-                <span class="card__lang-tag card__lang-tag--tools">Tools</span>
-              </div>
-              <p class="card__desc">
-                A containerised CI/CD pipeline helper that provisions
-                ephemeral build environments from a single config file. Placeholder.
-              </p>
-              <div class="card__tags" aria-label="Technologies used">
-                <span class="card__tag card__tag--accent">Go</span>
-                <span class="card__tag card__tag--green">Docker</span>
-                <span class="card__tag card__tag--orange">CI/CD</span>
-              </div>
-            </a>
-          </article>
-        </li>
-
-      </ul>
-    </section>
+    <!--
+      Chips — different set from index.html; back navigation via cd ~.
+    -->
+    <nav class="term-chips" aria-label="Quick commands">
+      <button
+        class="chip" type="button"
+        data-cmd="cd projects"
+        aria-label="Run: cd projects"
+      >cd projects</button>
+      <button
+        class="chip" type="button"
+        data-cmd="cd ~"
+        aria-label="Run: cd ~"
+      >cd ~</button>
+      <button
+        class="chip" type="button"
+        data-cmd="contact"
+        aria-label="Run: contact"
+      >contact</button>
+      <button
+        class="chip" type="button"
+        data-cmd="help"
+        aria-label="Run: help"
+      >help</button>
+    </nav>
 
   </main>
 
 
-  <!-- Mobile overlay backdrop -->
-  <div class="sidebar-overlay" id="sidebar-overlay" aria-hidden="true"></div>
-
-
   <!-- ══════════════════════════════════════
-       FOOTER — status bar
+       SITE FOOTER
        ══════════════════════════════════════ -->
-  <footer class="shell__footer">
-
-    <div class="statusbar" role="status" aria-label="Editor status">
-
-      <div class="statusbar__left">
-        <span class="statusbar__item statusbar__item--branch">
-          <svg width="11" height="11" viewBox="0 0 11 11" aria-hidden="true" fill="currentColor">
-            <circle cx="2.5" cy="2.5" r="1.5"/>
-            <circle cx="2.5" cy="8.5" r="1.5"/>
-            <circle cx="8.5" cy="4.5" r="1.5"/>
-            <line x1="2.5" y1="4" x2="2.5" y2="7" stroke="currentColor" stroke-width="1"/>
-            <line x1="4"   y1="2.5" x2="7"   y2="4" stroke="currentColor" stroke-width="1"/>
-          </svg>
-          main
-        </span>
-      </div>
-
-      <div class="statusbar__right">
-        <span class="statusbar__item statusbar__item--encoding">UTF-8</span>
-        <span class="statusbar__item statusbar__item--filetype">HTML</span>
-        <span class="statusbar__item statusbar__item--position">Ln 1, Col 1</span>
-      </div>
-
-    </div>
-
+  <footer class="site-footer" role="contentinfo">
+    <a href="https://github.com/kazee72" class="site-footer__link"
+       target="_blank" rel="noopener noreferrer">github.com/kazee72</a>
+    <span class="site-footer__sep" aria-hidden="true">·</span>
+    <a href="kontakt.html" class="site-footer__link">contact</a>
+    <span class="site-footer__sep" aria-hidden="true">·</span>
+    <span>built with vanilla html/css</span>
   </footer>
 
 
-  <script src="js/ui.js"></script>
-  <script src="js/filter.js"></script>
+  <script src="js/projekte.js"></script>
 </body>
 </html>

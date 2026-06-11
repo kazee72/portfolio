@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>contact — kazee72</title>
+  <link rel="stylesheet" href="css/tokens.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/terminal.css">
+</head>
+
+<body class="term-shell" data-base="." data-parent="index.html" data-page="contact">
+
+  <h1 class="visually-hidden">Contact — kazee72 Portfolio</h1>
+
+  <!-- ══════════════════════════════════════
+       WINDOW TITLE BAR
+       ══════════════════════════════════════ -->
+  <header class="win-bar" role="banner">
+    <span class="win-bar__title" aria-hidden="true">joel@portfolio: ~/contact</span>
+  </header>
+
+
+  <!-- ══════════════════════════════════════
+       MAIN — terminal output + prompt + chips
+       ══════════════════════════════════════ -->
+  <main class="term-body" id="term-body" aria-label="Terminal">
+
+    <div
+      class="term-output"
+      id="term-output"
+      role="log"
+      aria-live="polite"
+      aria-label="Terminal output"
+    ></div>
+
+    <!--
+      Semantic fallback — screen reader and no-JS access.
+      JS hides this once the terminal boots.
+    -->
+    <section id="contact-content" aria-label="Contact">
+      <h2>Get in touch</h2>
+
+      <p>[Placeholder bio — replace with your own text.]</p>
+      <p>
+        GitHub: <a href="https://github.com/kazee72" target="_blank" rel="noopener noreferrer">github.com/kazee72</a><br>
+        Email: <a href="mailto:[your-email@domain.com]">[your-email@domain.com]</a>
+      </p>
+
+      <h3>Contact form</h3>
+      <!--
+        Form action options:
+          A) Formspree:  action="https://formspree.io/f/REPLACE_ME"
+          B) mailto:     action="mailto:[your-email@domain.com]" enctype="text/plain"
+        Replace the placeholder before deploying.
+      -->
+      <form id="fa-contact-form" action="https://formspree.io/f/REPLACE_ME" method="post">
+        <div>
+          <label for="fa-name">Name</label>
+          <input id="fa-name" type="text" name="name" required autocomplete="name">
+        </div>
+        <div>
+          <label for="fa-email">Email</label>
+          <input id="fa-email" type="email" name="email" required autocomplete="email">
+        </div>
+        <div>
+          <label for="fa-subject">Subject</label>
+          <select id="fa-subject" name="subject" required>
+            <option value="">— select —</option>
+            <option value="general">general inquiry</option>
+            <option value="collaboration">project collaboration</option>
+            <option value="job">job or freelance</option>
+            <option value="hi">just saying hi</option>
+          </select>
+        </div>
+        <div>
+          <label for="fa-message">Message</label>
+          <textarea id="fa-message" name="message" required></textarea>
+        </div>
+        <button type="submit">Send message</button>
+      </form>
+    </section>
+
+    <!-- Live prompt line -->
+    <div class="term-prompt-line">
+      <span class="term-prompt-sign" aria-hidden="true">❯</span>
+      <label for="term-input" class="visually-hidden">Enter a command</label>
+      <input
+        class="term-input"
+        id="term-input"
+        type="text"
+        autocomplete="off"
+        autocorrect="off"
+        autocapitalize="off"
+        spellcheck="false"
+        aria-label="Command input"
+        enterkeyhint="send"
+      >
+    </div>
+
+    <nav class="term-chips" aria-label="Quick commands">
+      <button
+        class="chip" type="button"
+        data-cmd="cd ~"
+        aria-label="Run: cd ~"
+      >cd ~</button>
+      <button
+        class="chip" type="button"
+        data-cmd="cd projects"
+        aria-label="Run: cd projects"
+      >cd projects</button>
+      <button
+        class="chip" type="button"
+        data-cmd="about"
+        aria-label="Run: about"
+      >about</button>
+      <button
+        class="chip" type="button"
+        data-cmd="help"
+        aria-label="Run: help"
+      >help</button>
+    </nav>
+
+  </main>
+
+
+  <!-- ══════════════════════════════════════
+       SITE FOOTER
+       ══════════════════════════════════════ -->
+  <footer class="site-footer" role="contentinfo">
+    <a href="https://github.com/kazee72" class="site-footer__link"
+       target="_blank" rel="noopener noreferrer">github.com/kazee72</a>
+    <span class="site-footer__sep" aria-hidden="true">·</span>
+    <a href="kontakt.html" class="site-footer__link">contact</a>
+    <span class="site-footer__sep" aria-hidden="true">·</span>
+    <span>built with vanilla html/css</span>
+  </footer>
+
+
+  <script>
+  window.__termBoot = function (api) {
+
+    /* Hide semantic fallback; terminal takes over visually */
+    var fallback = document.getElementById('contact-content');
+    if (fallback) fallback.hidden = true;
+
+    /* ── 0. Echo the command that brought us here ── */
+    api.echo('contact');
+    api.blank();
+
+    /* ── 1. About block ───────────────────────────────────────────
+       PLACEHOLDER — edit the three lines below with real content.
+       ─────────────────────────────────────────────────────────── */
+    api.appendBlock(
+      '<div class="detail-section">' +
+        '<div class="detail-section__label">about</div>' +
+        '<div class="detail-body">' +
+          '<p style="margin-bottom:var(--space-3)">' +
+            'Hi, I\'m <strong style="color:var(--prompt)">Joel Bonini</strong> — ' +
+            'a security researcher and developer. I build tools for network scanning, ' +
+            'binary analysis, and automation. Mostly Rust, TypeScript, and bash. ' +
+            '[Replace this with your own bio.]' +
+          '</p>' +
+          '<p>Based in: <span style="color:var(--accent)">[your location]</span></p>' +
+        '</div>' +
+      '</div>'
+    );
+    api.blank();
+
+    /* ── 2. Links row ── */
+    api.appendBlock(
+      '<div class="detail-section">' +
+        '<div class="detail-section__label">find me</div>' +
+        '<div class="detail-links">' +
+          '<a href="https://github.com/kazee72" class="detail-link-btn"' +
+          '   target="_blank" rel="noopener noreferrer">github &rarr;</a>' +
+          '<a href="mailto:[your-email@domain.com]" class="detail-link-btn">' +
+            'email &rarr;' +
+          '</a>' +
+        '</div>' +
+      '</div>'
+    );
+    api.blank();
+
+    /* ── 3. Contact form ──────────────────────────────────────────
+       Action options (replace before deploying):
+         A) Formspree: action="https://formspree.io/f/REPLACE_ME"
+         B) mailto:    action="mailto:[your-email@domain.com]"
+                       enctype="text/plain"
+       ─────────────────────────────────────────────────────────── */
+    api.appendBlock(
+      '<div class="detail-section">' +
+        '<div class="detail-section__label">get in touch</div>' +
+        '<form class="detail-form" id="contact-form"' +
+        '      action="https://formspree.io/f/REPLACE_ME" method="post">' +
+
+          '<div class="detail-form__group">' +
+            '<label class="detail-form__label" for="inq-name">name</label>' +
+            '<input class="detail-form__input" id="inq-name" name="name"' +
+            '       type="text" required autocomplete="name">' +
+          '</div>' +
+
+          '<div class="detail-form__group">' +
+            '<label class="detail-form__label" for="inq-email">email</label>' +
+            '<input class="detail-form__input" id="inq-email" name="email"' +
+            '       type="email" required autocomplete="email">' +
+          '</div>' +
+
+          '<div class="detail-form__group">' +
+            '<label class="detail-form__label" for="inq-subject">subject</label>' +
+            '<div class="detail-form__select-wrap">' +
+              '<select class="detail-form__select" id="inq-subject" name="subject" required>' +
+                '<option value="">— select —</option>' +
+                '<option value="general">general inquiry</option>' +
+                '<option value="collaboration">project collaboration</option>' +
+                '<option value="job">job or freelance</option>' +
+                '<option value="hi">just saying hi</option>' +
+              '</select>' +
+            '</div>' +
+          '</div>' +
+
+          '<div class="detail-form__group">' +
+            '<label class="detail-form__label" for="inq-message">message</label>' +
+            '<textarea class="detail-form__textarea" id="inq-message"' +
+            '          name="message" required></textarea>' +
+          '</div>' +
+
+          '<button class="detail-form__submit" type="submit">send message</button>' +
+        '</form>' +
+      '</div>'
+    );
+    api.blank();
+    api.focus();
+
+    /* ── Progressive-enhancement submit handler ───────────────── */
+    /* Intercepts the form POST, sends via fetch, shows an inline  */
+    /* confirmation line. Falls back to normal POST if JS is off.  */
+    var form = document.getElementById('contact-form');
+    if (form && window.fetch) {
+      form.addEventListener('submit', function (e) {
+        e.preventDefault();
+
+        var btn = form.querySelector('.detail-form__submit');
+        btn.disabled = true;
+        btn.textContent = 'sending…';
+
+        fetch(form.action, {
+          method: 'POST',
+          body: new FormData(form),
+          headers: { 'Accept': 'application/json' }
+        })
+        .then(function (res) {
+          if (!res.ok) throw new Error('HTTP ' + res.status);
+          api.blank();
+          api.line(
+            '<span class="term-ok">&#10003;</span>' +
+            ' message sent — thanks, I\'ll be in touch',
+            ''
+          );
+          form.reset();
+          btn.disabled = false;
+          btn.textContent = 'send message';
+        })
+        .catch(function () {
+          api.blank();
+          api.line(
+            '<span class="term-err">&#10007; send failed — check your connection and try again</span>',
+            ''
+          );
+          btn.disabled = false;
+          btn.textContent = 'try again';
+        });
+      });
+    }
+  };
+  </script>
+
+  <script src="js/terminal.js"></script>
+</body>
+</html>

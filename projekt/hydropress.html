@@ -3,32 +3,21 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>portygon — kazee72</title>
+  <title>hydropress — kazee72</title>
   <link rel="stylesheet" href="../css/tokens.css">
   <link rel="stylesheet" href="../css/base.css">
   <link rel="stylesheet" href="../css/terminal.css">
 </head>
 
-<!--
-  TEMPLATE NOTE
-  To create the next project page:
-    1. Copy this file, rename it projekt/<slug>.html
-    2. Update: <title>, data-project, win-bar title, h1 (visually-hidden)
-    3. Update the semantic <article> (no-JS fallback)
-    4. Update the __termBoot inline script — swap all 8 content blocks
-    5. Set data-base=".." and data-parent="../projekte.html" (always for projekt/ pages)
-  Do not change the shell structure, CSS links, or terminal.js reference.
--->
+<body class="term-shell" data-base=".." data-parent="../projekte.html" data-project="hydropress">
 
-<body class="term-shell" data-base=".." data-parent="../projekte.html" data-project="portygon">
-
-  <h1 class="visually-hidden">portygon — kazee72 Portfolio</h1>
+  <h1 class="visually-hidden">hydropress — kazee72 Portfolio</h1>
 
   <!-- ══════════════════════════════════════
        WINDOW TITLE BAR
        ══════════════════════════════════════ -->
   <header class="win-bar" role="banner">
-    <span class="win-bar__title" aria-hidden="true">joel@portfolio: ~/projects/portygon</span>
+    <span class="win-bar__title" aria-hidden="true">joel@portfolio: ~/projects/hydropress</span>
   </header>
 
 
@@ -47,51 +36,42 @@
 
     <!--
       Semantic fallback — accessible without JS, hidden once terminal boots.
-      SWAP THIS BLOCK per project: update all text content and href values.
     -->
-    <article id="proj-content" aria-label="portygon project details">
-      <h2>portygon</h2>
-      <p>Category: security &mdash; rust, tokio, clap</p>
+    <article id="proj-content" aria-label="hydropress project details">
+      <h2>hydropress</h2>
+      <p>Category: tools &mdash; rust</p>
 
       <section>
         <h3>Overview</h3>
-        <p>portygon is an asynchronous TCP port scanner written in Rust.
-           It scans port ranges with bounded concurrency on the tokio runtime,
-           grabs service banners, supports stealth timing, and can emit results
-           as JSON for tooling pipelines.</p>
+        <p>hydropress is a file-compression CLI built in Rust around Huffman coding.
+           It packs files into a custom .h2 binary format and unpacks them losslessly,
+           with a modular design separating the coder from file I/O.</p>
       </section>
 
       <section>
         <h3>Features</h3>
         <ul>
-          <li>tokio async scanning with semaphore-bounded concurrency (limit 100, tuned down from 200 for reliability)</li>
-          <li>clap-based CLI with an indicatif progress bar</li>
-          <li>banner grabbing: passive, plus an HTTP GET probe for known web ports</li>
-          <li>--stealth flag with randomized sequential delays</li>
-          <li>--json output via serde; colored, sorted terminal output</li>
-          <li>14 passing tests (targets: 127.0.0.1 and scanme.nmap.org)</li>
-        </ul>
-      </section>
-
-      <section>
-        <h3>Roadmap</h3>
-        <ul>
-          <li>hostname resolution</li>
-          <li>scan summary with elapsed time</li>
-          <li>--timeout flag</li>
-          <li>adaptive concurrency</li>
+          <li>Huffman encoding/decoding to a custom .h2 binary format</li>
+          <li>modular architecture (huffman.rs, file_io.rs)</li>
+          <li>handles edge cases: empty files and single-unique-byte inputs</li>
+          <li>11 passing tests (logic + CLI)</li>
+          <li>published to crates.io as v0.1.1</li>
         </ul>
       </section>
 
       <section>
         <h3>Source</h3>
-        <p><a href="https://github.com/kazee72/portygon" target="_blank" rel="noopener noreferrer">github.com/kazee72/portygon</a></p>
+        <p>
+          <a href="https://github.com/kazee72/hydropress" target="_blank" rel="noopener noreferrer">github.com/kazee72/hydropress</a>
+          &middot;
+          <a href="https://crates.io/crates/hydropress" target="_blank" rel="noopener noreferrer">crates.io/crates/hydropress</a>
+        </p>
       </section>
 
       <section>
         <h3>Get in touch about this project</h3>
         <form action="#" method="post">
-          <input type="hidden" name="project" value="portygon">
+          <input type="hidden" name="project" value="hydropress">
           <div>
             <label for="fa-inq-name">Name</label>
             <input id="fa-inq-name" type="text" name="name" required autocomplete="name">
@@ -165,14 +145,6 @@
   </footer>
 
 
-  <!--
-    CONTENT BOOT HOOK
-    Defined BEFORE terminal.js so the engine calls it instead of the
-    default banner+help boot. SWAP THIS SCRIPT BLOCK per project —
-    update the echo slug, breadcrumb text/href, title, tags, all
-    section content, the gallery comment, the GitHub href, and the
-    form hidden field. Do not change the api.* call structure.
-  -->
   <script>
   window.__termBoot = function (api) {
 
@@ -180,14 +152,14 @@
     var fallback = document.getElementById('proj-content');
     if (fallback) fallback.hidden = true;
 
-    /* ── 0. Echo — as if the user ran: open portygon ── */
-    api.echo('open portygon');
+    /* ── 0. Echo ── */
+    api.echo('cd hydropress');
     api.blank();
 
     /* ── 1. Breadcrumb ── */
     api.appendBlock(
       '<div class="detail-breadcrumb">' +
-        '<span class="detail-breadcrumb__path">~/projects/portygon</span>' +
+        '<span class="detail-breadcrumb__path">~/projects/hydropress</span>' +
         '<a href="../projekte.html" class="detail-breadcrumb__back">&larr;&nbsp;back to projects</a>' +
       '</div>'
     );
@@ -195,12 +167,10 @@
     /* ── 2. Title + category tag + tech tags ── */
     api.appendBlock(
       '<div class="detail-header-row">' +
-        '<span class="detail-title">portygon</span>' +
-        '<span class="proj-card__tag proj-card__tag--security">[security]</span>' +
+        '<span class="detail-title">hydropress</span>' +
+        '<span class="proj-card__tag proj-card__tag--tools">[tools]</span>' +
         '<div class="detail-tech-list">' +
           '<span class="detail-tech__item">rust</span>' +
-          '<span class="detail-tech__item">tokio</span>' +
-          '<span class="detail-tech__item">clap</span>' +
         '</div>' +
       '</div>'
     );
@@ -212,10 +182,9 @@
       '<div class="detail-section">' +
         '<div class="detail-section__label">overview</div>' +
         '<p class="detail-body">' +
-          'portygon is an asynchronous TCP port scanner written in Rust. ' +
-          'It scans port ranges with bounded concurrency on the tokio runtime, ' +
-          'grabs service banners, supports stealth timing, and can emit results ' +
-          'as JSON for tooling pipelines.' +
+          'hydropress is a file-compression CLI built in Rust around Huffman coding. ' +
+          'It packs files into a custom .h2 binary format and unpacks them losslessly, ' +
+          'with a modular design separating the coder from file I/O.' +
         '</p>' +
       '</div>'
     );
@@ -226,34 +195,17 @@
       '<div class="detail-section">' +
         '<div class="detail-section__label">features</div>' +
         '<ul class="detail-list">' +
-          '<li class="detail-list__item">tokio async scanning with semaphore-bounded concurrency (limit&nbsp;100, tuned down from&nbsp;200 for reliability)</li>' +
-          '<li class="detail-list__item">clap-based CLI with an indicatif progress bar</li>' +
-          '<li class="detail-list__item">banner grabbing: passive, plus an HTTP&nbsp;GET probe for known web ports</li>' +
-          '<li class="detail-list__item">--stealth flag with randomized sequential delays</li>' +
-          '<li class="detail-list__item">--json output via serde; colored, sorted terminal output</li>' +
-          '<li class="detail-list__item">14&nbsp;passing tests (targets: 127.0.0.1 and scanme.nmap.org)</li>' +
+          '<li class="detail-list__item">Huffman encoding/decoding to a custom .h2 binary format</li>' +
+          '<li class="detail-list__item">modular architecture (huffman.rs, file_io.rs)</li>' +
+          '<li class="detail-list__item">handles edge cases: empty files and single-unique-byte inputs</li>' +
+          '<li class="detail-list__item">11&nbsp;passing tests (logic + CLI)</li>' +
+          '<li class="detail-list__item">published to crates.io as v0.1.1</li>' +
         '</ul>' +
       '</div>'
     );
     api.blank();
 
-    /* ── 5. Roadmap ── */
-    api.appendBlock(
-      '<div class="detail-section">' +
-        '<div class="detail-section__label">roadmap</div>' +
-        '<ul class="detail-list">' +
-          '<li class="detail-list__item">hostname resolution</li>' +
-          '<li class="detail-list__item">scan summary with elapsed time</li>' +
-          '<li class="detail-list__item">--timeout flag</li>' +
-          '<li class="detail-list__item">adaptive concurrency</li>' +
-        '</ul>' +
-      '</div>'
-    );
-    api.blank();
-
-    /* ── 6. Gallery ──────────────────────────────────────────────── */
-    /* Replace placeholder cells with real <img> tags when available */
-    /* Image paths: ../assets/img/portygon-1.png (portygon-2, -3)    */
+    /* ── 5. Gallery ── */
     api.appendBlock(
       '<div class="detail-section">' +
         '<div class="detail-section__label">gallery</div>' +
@@ -266,24 +218,26 @@
     );
     api.blank();
 
-    /* ── 7. Source link ── */
+    /* ── 6. Source links ── */
     api.appendBlock(
       '<div class="detail-section">' +
         '<div class="detail-section__label">source</div>' +
         '<div class="detail-links">' +
-          '<a href="https://github.com/kazee72/portygon" class="detail-link-btn"' +
+          '<a href="https://github.com/kazee72/hydropress" class="detail-link-btn"' +
           '   target="_blank" rel="noopener noreferrer">github &rarr;</a>' +
+          '<a href="https://crates.io/crates/hydropress" class="detail-link-btn"' +
+          '   target="_blank" rel="noopener noreferrer">crates.io &rarr;</a>' +
         '</div>' +
       '</div>'
     );
     api.blank();
 
-    /* ── 8. Inquiry form ── */
+    /* ── 7. Inquiry form ── */
     api.appendBlock(
       '<div class="detail-section">' +
         '<div class="detail-section__label">get in touch about this project</div>' +
         '<form class="detail-form" action="#" method="post">' +
-          '<input type="hidden" name="project" value="portygon">' +
+          '<input type="hidden" name="project" value="hydropress">' +
           '<div class="detail-form__group">' +
             '<label class="detail-form__label" for="inq-name">name</label>' +
             '<input class="detail-form__input" id="inq-name" name="name"' +
