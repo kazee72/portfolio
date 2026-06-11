@@ -1,40 +1,35 @@
 :root {
-  /* ── Palette (Tokyonight-ish dark) ── */
-  --bg:         #16161e;
-  --surface:    #1a1b26;
-  --surface-2:  #1f2335;
-  --surface-3:  #24283b;
-  --border:     #292e42;
-  --text:       #c0caf5;
-  --text-muted: #565f89;
-  --accent:     #7aa2f7;
-  --accent-2:   #7dcfff;
-  --tag-green:  #9ece6a;
-  --tag-purple: #bb9af7;
-  --tag-orange: #ff9e64;
+  /* ── Palette (Tokyonight terminal) ── */
+  --bg:          #0e0e14;
+  --surface:     #16161f;
+  --border:      #2a2a36;
+  --text:        #c0caf5;
+  --text-muted:  #565f89;
+  --prompt:      #9ece6a;
+  --accent:      #7aa2f7;
+
+  /* Category accent colors (for future project tags) */
+  --cat-systems:  #7aa2f7;
+  --cat-security: #f7768e;
+  --cat-tools:    #9ece6a;
+  --cat-bots:     #bb9af7;
 
   /* Traffic-light dots */
   --dot-close:    #ff5f57;
   --dot-minimize: #febc2e;
   --dot-maximize: #28c840;
 
-  /* Overlay & statusbar */
-  --overlay-bg:       rgba(0, 0, 0, 0.5);
-  --statusbar-hover:  rgba(0, 0, 0, 0.18);
-
   /* ── Typography ── */
   --font-mono: ui-monospace, "JetBrains Mono", "SF Mono", Menlo, monospace;
-  --font-body: system-ui, -apple-system, "Segoe UI", sans-serif;
 
-  /* Modular type scale (base 16 px) */
-  --text-xs:   0.6875rem;   /* 11 px */
-  --text-sm:   0.8125rem;   /* 13 px */
-  --text-base: 1rem;        /* 16 px */
-  --text-lg:   1.125rem;    /* 18 px */
-  --text-xl:   1.25rem;     /* 20 px */
-  --text-2xl:  1.5rem;      /* 24 px */
-  --text-3xl:  1.875rem;    /* 30 px */
-  --text-4xl:  2.25rem;     /* 36 px */
+  /* Type scale */
+  --text-xs:   0.6875rem;  /* 11 px */
+  --text-sm:   0.875rem;   /* 14 px */
+  --text-base: 1rem;       /* 16 px — also prevents mobile input zoom */
+  --text-lg:   1.125rem;   /* 18 px */
+  --text-xl:   1.25rem;    /* 20 px */
+  --text-2xl:  1.5rem;     /* 24 px */
+  --text-3xl:  1.875rem;   /* 30 px */
 
   /* ── Spacing scale ── */
   --space-1:  0.25rem;
@@ -45,8 +40,6 @@
   --space-6:  1.5rem;
   --space-8:  2rem;
   --space-10: 2.5rem;
-  --space-12: 3rem;
-  --space-16: 4rem;
 
   /* ── Radii ── */
   --radius-sm:   0.125rem;
@@ -54,42 +47,16 @@
   --radius-lg:   0.5rem;
   --radius-full: 9999px;
 
-  /* ── Shadows ── */
-  --shadow-sm:      0 1px 2px rgba(0, 0, 0, 0.3);
-  --shadow-md:      0 4px 6px rgba(0, 0, 0, 0.4);
-  --shadow-lg:      0 10px 15px rgba(0, 0, 0, 0.5);
-  --shadow-sidebar: 4px 0 12px rgba(0, 0, 0, 0.4);
-
-  /* Tag background tints (12 % opacity of corresponding tag color) */
-  --tag-green-bg:   rgba(158, 206, 106, 0.12);
-  --tag-purple-bg:  rgba(187, 154, 247, 0.12);
-  --tag-orange-bg:  rgba(255, 158, 100, 0.12);
-  --tag-accent-bg:  rgba(122, 162, 247, 0.12);
-  --tag-accent2-bg: rgba(125, 207, 255, 0.12);
-
-  /* Micro interactions */
-  --lift-sm: -3px;
-
   /* ── Motion ── */
-  --duration: 200ms;
-  --ease:     ease;
-  --transition: var(--duration) var(--ease);
-
-  /* ── Content & form layout ── */
-  --content-max-width: 720px;
-  --gallery-col-min:   200px;
-  --input-height:      2.5rem;   /* = --space-10 */
-
-  /* ── Shell dimensions ── */
-  --sidebar-width:    240px;
-  --titlebar-height:  38px;
-  --tabbar-height:    35px;
-  --statusbar-height: 22px;
-  --header-height: calc(var(--titlebar-height) + var(--tabbar-height));
+  --duration:       150ms;
+  --ease:           ease;
+  --transition:     var(--duration) var(--ease);
+  --blink-duration: 1s;
 }
 
 @media (prefers-reduced-motion: reduce) {
   :root {
-    --duration: 0ms;
+    --duration:       0ms;
+    --blink-duration: 0s;   /* disables cursor blink animation */
   }
 }
