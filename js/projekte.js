@@ -68,7 +68,7 @@
       title:    'miriel',
       category: 'bots',
       desc:     'Discord wiki bot for Elden Ring items & NPCs.',
-      stack:    ['typescript']
+      stack:    ['node.js', 'discord.js']
     },
     {
       slug:     'linked-list',
@@ -89,7 +89,7 @@
       title:    'securevideo',
       category: 'security',
       desc:     'Dual-SSD camera backup with checksum verify.',
-      stack:    ['in progress']
+      stack:    ['rust', 'python']
     }
   ];
 

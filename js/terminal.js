@@ -106,6 +106,7 @@
         helpRow('ls',                            'list current directory') +
         helpRow('open&nbsp;&lt;name&gt;',        'open a project page') +
         helpRow('contact',                       'navigate to ~/contact') +
+        helpRow('subscribe',                     'join the newsletter') +
         helpRow('clear',                         'clear the terminal') +
         helpRow('help',                          'show this message') +
       '</div>',
@@ -133,6 +134,82 @@
       '</div>',
       ''
     );
+  }
+
+  /* subscribe — inline newsletter signup form */
+  function cmdSubscribe() {
+    /*
+     * ── Form action options (replace before deploying) ───────
+     *   A) Formspree:  action="https://formspree.io/f/REPLACE_ME"
+     *   B) mailto:     action="mailto:[your-email@domain.com]"
+     *                  enctype="text/plain"
+     * ───────────────────────────────────────────────────────── */
+    appendBlock(
+      '<div class="detail-section">' +
+        '<div class="detail-section__label">newsletter</div>' +
+        '<div class="detail-body" style="margin-bottom:var(--space-3)">' +
+          'No spam — just occasional notes on security tooling, ' +
+          'new projects, and things worth reading.' +
+        '</div>' +
+        '<form class="detail-form" id="subscribe-form"' +
+        '      action="https://formspree.io/f/REPLACE_ME" method="post">' +
+
+          '<input type="hidden" name="_subject" value="Newsletter subscription">' +
+          '<input type="hidden" name="_template" value="table">' +
+
+          '<div class="detail-form__group">' +
+            '<label class="detail-form__label" for="sub-email">email</label>' +
+            '<input class="detail-form__input" id="sub-email" name="email"' +
+            '       type="email" required autocomplete="email"' +
+            '       placeholder="you@domain.com">' +
+          '</div>' +
+
+          '<button class="detail-form__submit" type="submit">subscribe</button>' +
+        '</form>' +
+      '</div>'
+    );
+    blank();
+
+    /* Progressive enhancement: intercept submit, POST via fetch,
+       show an inline confirmation. Falls back to a normal POST
+       if JS (or fetch) is unavailable.                          */
+    var form = document.getElementById('subscribe-form');
+    if (form && window.fetch) {
+      form.addEventListener('submit', function (e) {
+        e.preventDefault();
+
+        var btn = form.querySelector('.detail-form__submit');
+        btn.disabled = true;
+        btn.textContent = 'subscribing…';
+
+        fetch(form.action, {
+          method: 'POST',
+          body: new FormData(form),
+          headers: { 'Accept': 'application/json' }
+        })
+        .then(function (res) {
+          if (!res.ok) throw new Error('HTTP ' + res.status);
+          line(
+            '<span class="term-ok">&#10003;</span>' +
+            ' subscribed — thanks, watch your inbox',
+            ''
+          );
+          form.reset();
+          btn.disabled = false;
+          btn.textContent = 'subscribe';
+        })
+        .catch(function () {
+          line(
+            '<span class="term-err">&#10007; subscription failed — check your connection and try again</span>',
+            ''
+          );
+          btn.disabled = false;
+          btn.textContent = 'try again';
+        });
+      });
+    }
+
+    inp.focus();
   }
 
   /* ls — list the current directory; does NOT navigate */
@@ -261,7 +338,8 @@
     'open portygon', 'open hydropress', 'open acrux', 'open gitpulse',
     'open dotfiles', 'open frieren', 'open miriel', 'open linked-list',
     'open parity-check', 'open securevideo',
-    'contact', 'home', 'clear', 'neofetch'
+    'contact', 'home', 'clear', 'neofetch',
+    'subscribe'
   ];
 
   /* ── Execute ─────────────────────────────────────────────────── */
@@ -285,6 +363,7 @@
     if (lower === 'ls')                { cmdLs();                    return; }
     if (lower === 'ls projects')       { cmdLsProjectsSlugs();       return; }
     if (lower === 'contact')           { cmdContact();               return; }
+    if (lower === 'subscribe')         { cmdSubscribe();             return; }
     if (lower === 'cd')                { cmdHome();                  return; }
     if (lower.startsWith('cd '))       { cmdCd(trimmed.slice(3));    return; }
     if (lower === 'home')              { cmdHome();                  return; }
