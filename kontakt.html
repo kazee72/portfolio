@@ -40,21 +40,13 @@
     -->
     <section id="contact-content" aria-label="Contact">
       <h2>Get in touch</h2>
-
-      <p>[Placeholder bio — replace with your own text.]</p>
       <p>
         GitHub: <a href="https://github.com/kazee72" target="_blank" rel="noopener noreferrer">github.com/kazee72</a><br>
         Email: <a href="mailto:[your-email@domain.com]">[your-email@domain.com]</a>
       </p>
 
       <h3>Contact form</h3>
-      <!--
-        Form action options:
-          A) Formspree:  action="https://formspree.io/f/REPLACE_ME"
-          B) mailto:     action="mailto:[your-email@domain.com]" enctype="text/plain"
-        Replace the placeholder before deploying.
-      -->
-      <form id="fa-contact-form" action="https://formspree.io/f/REPLACE_ME" method="post">
+      <form id="fa-contact-form" action="https://formspree.io/f/mwvdqldz" method="post">
         <div>
           <label for="fa-name">Name</label>
           <input id="fa-name" type="text" name="name" required autocomplete="name">
@@ -157,11 +149,11 @@
         '<div class="detail-body">' +
           '<p style="margin-bottom:var(--space-3)">' +
             'Hi, I\'m <strong style="color:var(--prompt)">Joel Bonini</strong> — ' +
-            'a security researcher and developer. I build tools for network scanning, ' +
+            'a developer. I build tools for network scanning, ' +
             'binary analysis, and automation. Mostly Rust, TypeScript, and bash. ' +
             '[Replace this with your own bio.]' +
           '</p>' +
-          '<p>Based in: <span style="color:var(--accent)">[your location]</span></p>' +
+          '<p>Based in: <span style="color:var(--accent)">Switzerland</span></p>' +
         '</div>' +
       '</div>'
     );
@@ -182,17 +174,11 @@
     );
     api.blank();
 
-    /* ── 3. Contact form ──────────────────────────────────────────
-       Action options (replace before deploying):
-         A) Formspree: action="https://formspree.io/f/REPLACE_ME"
-         B) mailto:    action="mailto:[your-email@domain.com]"
-                       enctype="text/plain"
-       ─────────────────────────────────────────────────────────── */
     api.appendBlock(
       '<div class="detail-section">' +
         '<div class="detail-section__label">get in touch</div>' +
         '<form class="detail-form" id="contact-form"' +
-        '      action="https://formspree.io/f/REPLACE_ME" method="post">' +
+        '      action="https://formspree.io/f/mwvdqldz" method="post">' +
 
           '<div class="detail-form__group">' +
             '<label class="detail-form__label" for="inq-name">name</label>' +
