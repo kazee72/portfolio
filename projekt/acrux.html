@@ -3,21 +3,21 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>gitpulse — kazee72</title>
+  <title>acrux — kazee72</title>
   <link rel="stylesheet" href="../css/tokens.css">
   <link rel="stylesheet" href="../css/base.css">
   <link rel="stylesheet" href="../css/terminal.css">
 </head>
 
-<body class="term-shell" data-base=".." data-parent="../projekte.html" data-project="gitpulse">
+<body class="term-shell" data-base=".." data-parent="../projekte.html" data-project="acrux">
 
-  <h1 class="visually-hidden">gitpulse — kazee72 Portfolio</h1>
+  <h1 class="visually-hidden">acrux — kazee72 Portfolio</h1>
 
   <!-- ══════════════════════════════════════
        WINDOW TITLE BAR
        ══════════════════════════════════════ -->
   <header class="win-bar" role="banner">
-    <span class="win-bar__title" aria-hidden="true">joel@portfolio: ~/projects/gitpulse</span>
+    <span class="win-bar__title" aria-hidden="true">joel@portfolio: ~/projects/acrux</span>
   </header>
 
 
@@ -36,38 +36,40 @@
 
     <!--
       Semantic fallback — accessible without JS, hidden once terminal boots.
+      SWAP THIS BLOCK per project: update all text content and href values.
     -->
-    <article id="proj-content" aria-label="gitpulse project details">
-      <h2>gitpulse</h2>
-      <p>Category: tools &mdash; bash</p>
+    <article id="proj-content" aria-label="acrux project details">
+      <h2>acrux</h2>
+      <p>Category: systems &mdash; rust</p>
+      <p>Status: early development</p>
 
       <section>
         <h3>Overview</h3>
-        <p>GitPulse is a Bash CLI that scans local Git repositories and reports their
-           health &mdash; uncommitted changes, stale branches, sync status &mdash; with
-           cron integration for scheduled checks.</p>
+        <p>acrux is a custom programming language with a tree-walking interpreter
+           written in Rust. The pipeline runs Lexer &rarr; Parser &rarr; AST &rarr;
+           Evaluator, using Pratt parsing for expression precedence and boxed nodes
+           for the recursive AST.</p>
       </section>
 
       <section>
         <h3>Features</h3>
         <ul>
-          <li>scans multiple Git repos for health status</li>
-          <li>modular Bash architecture</li>
-          <li>cron integration for scheduled runs</li>
-          <li>20-test suite</li>
-          <li>Word / Markdown documentation</li>
+          <li>hand-written lexer and parser</li>
+          <li>Pratt parsing for expression precedence</li>
+          <li>Box&lt;T&gt; for recursive AST node types</li>
+          <li>tree-walking evaluator</li>
         </ul>
       </section>
 
       <section>
         <h3>Source</h3>
-        <p><a href="https://github.com/kazee72/GitPulse" target="_blank" rel="noopener noreferrer">github.com/kazee72/GitPulse</a></p>
+        <p><a href="https://github.com/kazee72/acrux" target="_blank" rel="noopener noreferrer">github.com/kazee72/acrux</a></p>
       </section>
 
       <section>
         <h3>Get in touch about this project</h3>
         <form action="#" method="post">
-          <input type="hidden" name="project" value="gitpulse">
+          <input type="hidden" name="project" value="acrux">
           <div>
             <label for="fa-inq-name">Name</label>
             <input id="fa-inq-name" type="text" name="name" required autocomplete="name">
@@ -141,6 +143,14 @@
   </footer>
 
 
+  <!--
+    CONTENT BOOT HOOK
+    Defined BEFORE terminal.js so the engine calls it instead of the
+    default banner+help boot. SWAP THIS SCRIPT BLOCK per project —
+    update the echo slug, breadcrumb text/href, title, tags, all
+    section content, the gallery comment, the GitHub href, and the
+    form hidden field. Do not change the api.* call structure.
+  -->
   <script>
   window.__termBoot = function (api) {
 
@@ -148,14 +158,14 @@
     var fallback = document.getElementById('proj-content');
     if (fallback) fallback.hidden = true;
 
-    /* ── 0. Echo ── */
-    api.echo('cd gitpulse');
+    /* ── 0. Echo — as if the user ran: open acrux ── */
+    api.echo('open acrux');
     api.blank();
 
     /* ── 1. Breadcrumb ── */
     api.appendBlock(
       '<div class="detail-breadcrumb">' +
-        '<span class="detail-breadcrumb__path">~/projects/gitpulse</span>' +
+        '<span class="detail-breadcrumb__path">~/projects/acrux</span>' +
         '<a href="../projekte.html" class="detail-breadcrumb__back">&larr;&nbsp;back to projects</a>' +
       '</div>'
     );
@@ -163,14 +173,19 @@
     /* ── 2. Title + category tag + tech tags ── */
     api.appendBlock(
       '<div class="detail-header-row">' +
-        '<span class="detail-title">gitpulse</span>' +
-        '<span class="proj-card__tag proj-card__tag--tools">[tools]</span>' +
+        '<span class="detail-title">acrux</span>' +
+        '<span class="proj-card__tag proj-card__tag--systems">[systems]</span>' +
         '<div class="detail-tech-list">' +
-          '<span class="detail-tech__item">bash</span>' +
+          '<span class="detail-tech__item">rust</span>' +
         '</div>' +
       '</div>'
     );
     api.appendBlock('<hr class="term-hr" aria-hidden="true">');
+
+    /* ── Status ── */
+    api.appendBlock(
+      '<div class="term-hint">status: <span class="term-hint__cmd">early development</span></div>'
+    );
     api.blank();
 
     /* ── 3. Overview ── */
@@ -178,9 +193,10 @@
       '<div class="detail-section">' +
         '<div class="detail-section__label">overview</div>' +
         '<p class="detail-body">' +
-          'GitPulse is a Bash CLI that scans local Git repositories and reports their ' +
-          'health &mdash; uncommitted changes, stale branches, sync status &mdash; with ' +
-          'cron integration for scheduled checks.' +
+          'acrux is a custom programming language with a tree-walking interpreter ' +
+          'written in Rust. The pipeline runs Lexer&nbsp;&rarr;&nbsp;Parser&nbsp;&rarr;&nbsp;AST&nbsp;&rarr;&nbsp;Evaluator, ' +
+          'using Pratt parsing for expression precedence and boxed nodes ' +
+          'for the recursive AST.' +
         '</p>' +
       '</div>'
     );
@@ -191,17 +207,18 @@
       '<div class="detail-section">' +
         '<div class="detail-section__label">features</div>' +
         '<ul class="detail-list">' +
-          '<li class="detail-list__item">scans multiple Git repos for health status</li>' +
-          '<li class="detail-list__item">modular Bash architecture</li>' +
-          '<li class="detail-list__item">cron integration for scheduled runs</li>' +
-          '<li class="detail-list__item">20-test suite</li>' +
-          '<li class="detail-list__item">Word / Markdown documentation</li>' +
+          '<li class="detail-list__item">hand-written lexer and parser</li>' +
+          '<li class="detail-list__item">Pratt parsing for expression precedence</li>' +
+          '<li class="detail-list__item">Box&lt;T&gt; for recursive AST node types</li>' +
+          '<li class="detail-list__item">tree-walking evaluator</li>' +
         '</ul>' +
       '</div>'
     );
     api.blank();
 
-    /* ── 5. Gallery ── */
+    /* ── 5. Gallery ──────────────────────────────────────────────── */
+    /* Replace placeholder cells with real <img> tags when available */
+    /* Image paths: ../assets/img/acrux-1.png (acrux-2, -3)          */
     api.appendBlock(
       '<div class="detail-section">' +
         '<div class="detail-section__label">gallery</div>' +
@@ -214,12 +231,12 @@
     );
     api.blank();
 
-    /* ── 6. Source links ── */
+    /* ── 6. Source link ── */
     api.appendBlock(
       '<div class="detail-section">' +
         '<div class="detail-section__label">source</div>' +
         '<div class="detail-links">' +
-          '<a href="https://github.com/kazee72/GitPulse" class="detail-link-btn"' +
+          '<a href="https://github.com/kazee72/acrux" class="detail-link-btn"' +
           '   target="_blank" rel="noopener noreferrer">github &rarr;</a>' +
         '</div>' +
       '</div>'
@@ -231,7 +248,7 @@
       '<div class="detail-section">' +
         '<div class="detail-section__label">get in touch about this project</div>' +
         '<form class="detail-form" action="#" method="post">' +
-          '<input type="hidden" name="project" value="gitpulse">' +
+          '<input type="hidden" name="project" value="acrux">' +
           '<div class="detail-form__group">' +
             '<label class="detail-form__label" for="inq-name">name</label>' +
             '<input class="detail-form__input" id="inq-name" name="name"' +
