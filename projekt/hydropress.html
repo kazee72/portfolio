@@ -205,14 +205,30 @@
     );
     api.blank();
 
-    /* ── 5. Gallery ── */
+    /* ── 5. Screenshots ── */
+    /* Click a shot to open the full-size PNG. */
     api.appendBlock(
       '<div class="detail-section">' +
-        '<div class="detail-section__label">gallery</div>' +
-        '<div class="detail-gallery">' +
-          '<div class="detail-gallery__cell">screenshot&nbsp;1</div>' +
-          '<div class="detail-gallery__cell">screenshot&nbsp;2</div>' +
-          '<div class="detail-gallery__cell">screenshot&nbsp;3</div>' +
+        '<div class="detail-section__label">screenshots</div>' +
+        '<div class="detail-shots">' +
+          '<figure class="detail-figure">' +
+            '<a class="detail-figure__link" href="../assets/img/hydropress-help.png" target="_blank" rel="noopener">' +
+              '<img class="detail-figure__img" src="../assets/img/hydropress-help.png" alt="hydropress CLI help output" loading="lazy" decoding="async">' +
+            '</a>' +
+            '<figcaption class="detail-figure__caption">cli help</figcaption>' +
+          '</figure>' +
+          '<figure class="detail-figure">' +
+            '<a class="detail-figure__link" href="../assets/img/hydropress-compression.png" target="_blank" rel="noopener">' +
+              '<img class="detail-figure__img" src="../assets/img/hydropress-compression.png" alt="hydropress compressing a file to .h2" loading="lazy" decoding="async">' +
+            '</a>' +
+            '<figcaption class="detail-figure__caption">compress</figcaption>' +
+          '</figure>' +
+          '<figure class="detail-figure">' +
+            '<a class="detail-figure__link" href="../assets/img/hydropress-decompression.png" target="_blank" rel="noopener">' +
+              '<img class="detail-figure__img" src="../assets/img/hydropress-decompression.png" alt="hydropress decompressing a .h2 file" loading="lazy" decoding="async">' +
+            '</a>' +
+            '<figcaption class="detail-figure__caption">decompress</figcaption>' +
+          '</figure>' +
         '</div>' +
       '</div>'
     );

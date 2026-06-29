@@ -201,14 +201,30 @@
     );
     api.blank();
 
-    /* ── 5. Gallery ── */
+    /* ── 5. Screenshots ── */
+    /* Click a shot to open the full-size PNG. */
     api.appendBlock(
       '<div class="detail-section">' +
-        '<div class="detail-section__label">gallery</div>' +
-        '<div class="detail-gallery">' +
-          '<div class="detail-gallery__cell">screenshot&nbsp;1</div>' +
-          '<div class="detail-gallery__cell">screenshot&nbsp;2</div>' +
-          '<div class="detail-gallery__cell">screenshot&nbsp;3</div>' +
+        '<div class="detail-section__label">screenshots</div>' +
+        '<div class="detail-shots">' +
+          '<figure class="detail-figure">' +
+            '<a class="detail-figure__link" href="../assets/img/dotfiles-emptyworkspace.png" target="_blank" rel="noopener">' +
+              '<img class="detail-figure__img" src="../assets/img/dotfiles-emptyworkspace.png" alt="macOS rice: empty tiling workspace with SketchyBar" loading="lazy" decoding="async">' +
+            '</a>' +
+            '<figcaption class="detail-figure__caption">empty workspace</figcaption>' +
+          '</figure>' +
+          '<figure class="detail-figure">' +
+            '<a class="detail-figure__link" href="../assets/img/dotfiles-single-terminal.png" target="_blank" rel="noopener">' +
+              '<img class="detail-figure__img" src="../assets/img/dotfiles-single-terminal.png" alt="macOS rice: single kitty terminal tiled" loading="lazy" decoding="async">' +
+            '</a>' +
+            '<figcaption class="detail-figure__caption">single window</figcaption>' +
+          '</figure>' +
+          '<figure class="detail-figure">' +
+            '<a class="detail-figure__link" href="../assets/img/dotfiles-multiples-terminals.png" target="_blank" rel="noopener">' +
+              '<img class="detail-figure__img" src="../assets/img/dotfiles-multiples-terminals.png" alt="macOS rice: multiple terminals tiled by AeroSpace" loading="lazy" decoding="async">' +
+            '</a>' +
+            '<figcaption class="detail-figure__caption">tiled windows</figcaption>' +
+          '</figure>' +
         '</div>' +
       '</div>'
     );
