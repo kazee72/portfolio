@@ -69,7 +69,7 @@
     blank();
     line(
       '<span class="banner__handle">kazee72</span>' +
-      '<span class="banner__tagline">security researcher &amp; developer</span>',
+      '<span class="banner__tagline">developer</span>',
       'banner'
     );
     line('<hr class="term-hr" aria-hidden="true">', '');
@@ -152,7 +152,7 @@
           'new projects, and things worth reading.' +
         '</div>' +
         '<form class="detail-form" id="subscribe-form"' +
-        '      action="https://formspree.io/f/REPLACE_ME" method="post">' +
+        '      action="https://formspree.io/f/xaqgbege" method="post">' +
 
           '<input type="hidden" name="_subject" value="Newsletter subscription">' +
           '<input type="hidden" name="_template" value="table">' +
