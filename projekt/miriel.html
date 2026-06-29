@@ -209,16 +209,30 @@
     );
     api.blank();
 
-    /* ── 5. Gallery ──────────────────────────────────────────────── */
-    /* Replace placeholder cells with real <img> tags when available */
-    /* Image paths: ../assets/img/miriel-1.png (miriel-2, -3)        */
+    /* ── 5. Screenshots ──────────────────────────────────────────── */
+    /* Click a shot to open the full-size PNG.                       */
     api.appendBlock(
       '<div class="detail-section">' +
-        '<div class="detail-section__label">gallery</div>' +
-        '<div class="detail-gallery">' +
-          '<div class="detail-gallery__cell">screenshot&nbsp;1</div>' +
-          '<div class="detail-gallery__cell">screenshot&nbsp;2</div>' +
-          '<div class="detail-gallery__cell">screenshot&nbsp;3</div>' +
+        '<div class="detail-section__label">screenshots</div>' +
+        '<div class="detail-shots">' +
+          '<figure class="detail-figure">' +
+            '<a class="detail-figure__link" href="../assets/img/miriel-wiki.png" target="_blank" rel="noopener">' +
+              '<img class="detail-figure__img" src="../assets/img/miriel-wiki.png" alt="Miriel bot showing an Elden Ring wiki entry in Discord" loading="lazy" decoding="async">' +
+            '</a>' +
+            '<figcaption class="detail-figure__caption">item lookup</figcaption>' +
+          '</figure>' +
+          '<figure class="detail-figure">' +
+            '<a class="detail-figure__link" href="../assets/img/miriel-help.png" target="_blank" rel="noopener">' +
+              '<img class="detail-figure__img" src="../assets/img/miriel-help.png" alt="Miriel bot help command" loading="lazy" decoding="async">' +
+            '</a>' +
+            '<figcaption class="detail-figure__caption">help</figcaption>' +
+          '</figure>' +
+          '<figure class="detail-figure">' +
+            '<a class="detail-figure__link" href="../assets/img/miriel-about.png" target="_blank" rel="noopener">' +
+              '<img class="detail-figure__img" src="../assets/img/miriel-about.png" alt="Miriel bot about command" loading="lazy" decoding="async">' +
+            '</a>' +
+            '<figcaption class="detail-figure__caption">about</figcaption>' +
+          '</figure>' +
         '</div>' +
       '</div>'
     );

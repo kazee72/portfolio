@@ -204,17 +204,14 @@
     );
     api.blank();
 
-    /* ── 5. Gallery ──────────────────────────────────────────────── */
-    /* Replace placeholder cells with real <img> tags when available */
-    /* Image paths: ../assets/img/parity-check-1.png (parity-check-2, -3) */
+    /* ── 5. Diagram ──────────────────────────────────────────────── */
+    /* Single full-width, self-labelled SVG.                         */
     api.appendBlock(
       '<div class="detail-section">' +
-        '<div class="detail-section__label">gallery</div>' +
-        '<div class="detail-gallery">' +
-          '<div class="detail-gallery__cell">screenshot&nbsp;1</div>' +
-          '<div class="detail-gallery__cell">screenshot&nbsp;2</div>' +
-          '<div class="detail-gallery__cell">screenshot&nbsp;3</div>' +
-        '</div>' +
+        '<div class="detail-section__label">diagram</div>' +
+        '<figure class="detail-diagram">' +
+          '<img class="detail-diagram__img" src="../assets/img/parity-check-bytes.svg" alt="byte-for-byte file comparison diagram" loading="lazy" decoding="async">' +
+        '</figure>' +
       '</div>'
     );
     api.blank();

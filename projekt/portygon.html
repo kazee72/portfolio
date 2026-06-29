@@ -251,16 +251,24 @@
     );
     api.blank();
 
-    /* ── 6. Gallery ──────────────────────────────────────────────── */
-    /* Replace placeholder cells with real <img> tags when available */
-    /* Image paths: ../assets/img/portygon-1.png (portygon-2, -3)    */
+    /* ── 6. Screenshots ──────────────────────────────────────────── */
+    /* Click a shot to open the full-size PNG.                       */
     api.appendBlock(
       '<div class="detail-section">' +
-        '<div class="detail-section__label">gallery</div>' +
-        '<div class="detail-gallery">' +
-          '<div class="detail-gallery__cell">screenshot&nbsp;1</div>' +
-          '<div class="detail-gallery__cell">screenshot&nbsp;2</div>' +
-          '<div class="detail-gallery__cell">screenshot&nbsp;3</div>' +
+        '<div class="detail-section__label">screenshots</div>' +
+        '<div class="detail-shots">' +
+          '<figure class="detail-figure">' +
+            '<a class="detail-figure__link" href="../assets/img/portygon-scan.png" target="_blank" rel="noopener">' +
+              '<img class="detail-figure__img" src="../assets/img/portygon-scan.png" alt="portygon scanning a host, open ports with grabbed banners" loading="lazy" decoding="async">' +
+            '</a>' +
+            '<figcaption class="detail-figure__caption">port scan + banners</figcaption>' +
+          '</figure>' +
+          '<figure class="detail-figure">' +
+            '<a class="detail-figure__link" href="../assets/img/portygon-json.png" target="_blank" rel="noopener">' +
+              '<img class="detail-figure__img" src="../assets/img/portygon-json.png" alt="portygon --json output" loading="lazy" decoding="async">' +
+            '</a>' +
+            '<figcaption class="detail-figure__caption">--json output</figcaption>' +
+          '</figure>' +
         '</div>' +
       '</div>'
     );

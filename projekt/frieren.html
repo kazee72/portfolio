@@ -218,16 +218,30 @@
     );
     api.blank();
 
-    /* ── 5. Gallery ──────────────────────────────────────────────── */
-    /* Replace placeholder cells with real <img> tags when available */
-    /* Image paths: ../assets/img/frieren-1.png (frieren-2, -3)      */
+    /* ── 5. Screenshots ──────────────────────────────────────────── */
+    /* Click a shot to open the full-size PNG.                       */
     api.appendBlock(
       '<div class="detail-section">' +
-        '<div class="detail-section__label">gallery</div>' +
-        '<div class="detail-gallery">' +
-          '<div class="detail-gallery__cell">screenshot&nbsp;1</div>' +
-          '<div class="detail-gallery__cell">screenshot&nbsp;2</div>' +
-          '<div class="detail-gallery__cell">screenshot&nbsp;3</div>' +
+        '<div class="detail-section__label">screenshots</div>' +
+        '<div class="detail-shots">' +
+          '<figure class="detail-figure">' +
+            '<a class="detail-figure__link" href="../assets/img/frieren-status.png" target="_blank" rel="noopener">' +
+              '<img class="detail-figure__img" src="../assets/img/frieren-status.png" alt="Frieren bot status command in Discord" loading="lazy" decoding="async">' +
+            '</a>' +
+            '<figcaption class="detail-figure__caption">status</figcaption>' +
+          '</figure>' +
+          '<figure class="detail-figure">' +
+            '<a class="detail-figure__link" href="../assets/img/frieren-uptime.png" target="_blank" rel="noopener">' +
+              '<img class="detail-figure__img" src="../assets/img/frieren-uptime.png" alt="Frieren bot uptime command" loading="lazy" decoding="async">' +
+            '</a>' +
+            '<figcaption class="detail-figure__caption">uptime</figcaption>' +
+          '</figure>' +
+          '<figure class="detail-figure">' +
+            '<a class="detail-figure__link" href="../assets/img/frieren-ping.png" target="_blank" rel="noopener">' +
+              '<img class="detail-figure__img" src="../assets/img/frieren-ping.png" alt="Frieren bot ping command" loading="lazy" decoding="async">' +
+            '</a>' +
+            '<figcaption class="detail-figure__caption">ping</figcaption>' +
+          '</figure>' +
         '</div>' +
       '</div>'
     );
