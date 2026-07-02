@@ -94,8 +94,8 @@ erarbeiteten Prompts (siehe Methodik). Bei vageren Anweisungen könnte sich dies
 verschieben.
 
 **Nutzung und Limits.** Das war der grösste Unterschied. Claude Code verbrauchte sehr
-schnell Tokens: Bereits nach 3-4 langen, detaillierten Prompts war das Limit erreicht
-- und das, obwohl nur Sonnet (high) und nicht Opus genutzt wurde. Mit Kilo Code +
+schnell Tokens: Bereits nach 3-4 langen, detaillierten Prompts war das Limit erreicht 
+und das, obwohl nur Sonnet (high) und nicht Opus genutzt wurde. Mit Kilo Code +
 GLM 5.2 habe ich das Limit hingegen nie erreicht. Das Setup arbeitet spürbar
 effizienter, was möglicherweise auch mit dem kürzeren Reasoning zusammenhängt.
 
