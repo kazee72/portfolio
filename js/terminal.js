@@ -68,7 +68,7 @@
   function printBanner() {
     blank();
     line(
-      '<span class="banner__handle">kazee72</span>' +
+      '<span class="banner__handle">your-name</span>' +
       '<span class="banner__tagline">developer</span>',
       'banner'
     );
@@ -121,14 +121,12 @@
      * ──────────────────────────────────────────────────────── */
     line(
       '<div class="term-about">' +
-        '<p>Hi — I\'m <strong>kaze</strong>. ' +
-        '[Placeholder — replace this paragraph with your own bio.]</p>' +
-        '<p>I work on security tooling, systems programming, and automation. ' +
-        'Mostly Rust, Python, and Go. Currently exploring network scanning, ' +
-        'binary analysis, and building useful open-source things.</p>' +
+        '<p>Hi — I\'m <strong>[your-name]</strong>.</p>' +
+        '<p>[Replace this paragraph with a short bio: who you are, ' +
+        'what you build, and what you\'re currently working on.]</p>' +
         '<p>' +
           'Based in: <span class="term-about__meta">[your location]</span><br>' +
-          'Open to:&ensp;<span class="term-about__meta">freelance / collaborations</span>' +
+          'Open to:&ensp;<span class="term-about__meta">[freelance / jobs / collaborations]</span>' +
         '</p>' +
         '<p class="term-about__edit">→ edit this block: js/terminal.js → cmdAbout()</p>' +
       '</div>',
@@ -152,7 +150,7 @@
           'new projects, and things worth reading.' +
         '</div>' +
         '<form class="detail-form" id="subscribe-form"' +
-        '      action="https://formspree.io/f/xaqgbege" method="post">' +
+        '      action="https://formspree.io/f/REPLACE_ME" method="post">' +
 
           '<input type="hidden" name="_subject" value="Newsletter subscription">' +
           '<input type="hidden" name="_template" value="table">' +
@@ -237,8 +235,7 @@
   /* ls projects — print project slugs inline; does NOT navigate */
   function cmdLsProjectsSlugs() {
     var slugs = [
-      'portygon', 'hydropress', 'acrux', 'gitpulse', 'dotfiles',
-      'frieren', 'miriel', 'linked-list', 'parity-check', 'securevideo'
+      'example-tools', 'example-security', 'example-systems', 'example-bots'
     ];
     line(slugs.join('    '), '');
   }
@@ -335,9 +332,8 @@
   var KNOWN = [
     'help', 'about', 'ls', 'ls projects',
     'cd projects', 'cd contact', 'cd ..', 'cd ~', 'cd home',
-    'open portygon', 'open hydropress', 'open acrux', 'open gitpulse',
-    'open dotfiles', 'open frieren', 'open miriel', 'open linked-list',
-    'open parity-check', 'open securevideo',
+    'open example-tools', 'open example-security',
+    'open example-systems', 'open example-bots',
     'contact', 'home', 'clear', 'neofetch',
     'subscribe'
   ];

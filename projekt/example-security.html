@@ -3,21 +3,33 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>securevideo — kazee72</title>
+  <title>example-security — your-name</title>
   <link rel="stylesheet" href="../css/tokens.css">
   <link rel="stylesheet" href="../css/base.css">
   <link rel="stylesheet" href="../css/terminal.css">
 </head>
 
-<body class="term-shell" data-base=".." data-parent="../projekte.html" data-project="securevideo">
+<!--
+  TEMPLATE NOTE
+  To turn this sample into a real project page:
+    1. Copy this file, rename it projekt/<your-slug>.html
+    2. Replace every "example-security" with your project's slug
+    3. Update: <title>, data-project, win-bar title, h1 (visually-hidden)
+    4. Update the semantic <article> (no-JS fallback)
+    5. Update the __termBoot inline script — swap all content blocks
+    6. Set data-base=".." and data-parent="../projekte.html" (always for projekt/ pages)
+  Do not change the shell structure, CSS links, or terminal.js reference.
+-->
 
-  <h1 class="visually-hidden">securevideo — kazee72 Portfolio</h1>
+<body class="term-shell" data-base=".." data-parent="../projekte.html" data-project="example-security">
+
+  <h1 class="visually-hidden">example-security — Portfolio</h1>
 
   <!-- ══════════════════════════════════════
        WINDOW TITLE BAR
        ══════════════════════════════════════ -->
   <header class="win-bar" role="banner">
-    <span class="win-bar__title" aria-hidden="true">kaze@portfolio: ~/projects/securevideo</span>
+    <span class="win-bar__title" aria-hidden="true">user@portfolio: ~/projects/example-security</span>
   </header>
 
 
@@ -38,40 +50,42 @@
       Semantic fallback — accessible without JS, hidden once terminal boots.
       SWAP THIS BLOCK per project: update all text content and href values.
     -->
-    <article id="proj-content" aria-label="securevideo project details">
-      <h2>securevideo</h2>
-      <p>Category: security &mdash; rust, python</p>
-      <p>Status: WIP</p>
+    <article id="proj-content" aria-label="example-security project details">
+      <h2>example-security</h2>
+      <p>Category: security &mdash; rust</p>
 
       <section>
         <h3>Overview</h3>
-        <p>SecureVideo is a hardware-backed backup tool for offloading large video and
-           photo files from a camera or SD card. Running on a LattePanda IOTA single-board
-           computer, it copies the source to two separate SSDs at once and verifies via
-           checksum that both copies are uncorrupted and byte-identical &mdash; so footage
-           can&rsquo;t be silently lost. A collaboration with my brother for his studies at
-           ETH Zürich.</p>
+        <p>example-security is a sample project entry. Replace this overview with a
+           short description of your project: what it does, how you built it,
+           and what makes it interesting.</p>
       </section>
 
       <section>
         <h3>Features</h3>
         <ul>
-          <li>runs on a LattePanda IOTA single-board computer</li>
-          <li>simultaneous copy to two separate SSDs (redundancy)</li>
-          <li>checksum verification of every copy against the source</li>
-          <li>planned: an Arduino status display, and a possible rewrite in C</li>
+          <li>Feature one &mdash; describe a real capability of the project</li>
+          <li>Feature two &mdash; another capability</li>
+          <li>Feature three &mdash; and one more</li>
         </ul>
       </section>
 
+      <!--
+        SCREENSHOTS — images live in assets/img/ and are referenced from
+        projekt/ pages as ../assets/img/<file>. When you have images,
+        uncomment this section AND the matching block in the __termBoot
+        script below. See projekt/example-tools.html for the exact markup.
+      -->
+
       <section>
         <h3>Source</h3>
-        <p>github: <a href="https://github.com/Bxnj/securevideo" target="_blank" rel="noopener">github.com/Bxnj/securevideo</a></p>
+        <p><a href="https://github.com/your-username/example-security" target="_blank" rel="noopener noreferrer">github.com/your-username/example-security</a></p>
       </section>
 
       <section>
         <h3>Get in touch about this project</h3>
         <form action="#" method="post">
-          <input type="hidden" name="project" value="securevideo">
+          <input type="hidden" name="project" value="example-security">
           <div>
             <label for="fa-inq-name">Name</label>
             <input id="fa-inq-name" type="text" name="name" required autocomplete="name">
@@ -91,7 +105,7 @@
 
     <!-- Live prompt line -->
     <div class="term-prompt-line">
-      <span class="term-prompt-sign" aria-hidden="true">❯</span>
+      <span class="term-prompt-sign" aria-hidden="true">&#10095;</span>
       <label for="term-input" class="visually-hidden">Enter a command</label>
       <input
         class="term-input"
@@ -136,11 +150,11 @@
        SITE FOOTER
        ══════════════════════════════════════ -->
   <footer class="site-footer" role="contentinfo">
-    <a href="https://github.com/kazee72" class="site-footer__link"
-       target="_blank" rel="noopener noreferrer">github.com/kazee72</a>
-    <span class="site-footer__sep" aria-hidden="true">·</span>
+    <a href="https://github.com/your-username" class="site-footer__link"
+       target="_blank" rel="noopener noreferrer">github.com/your-username</a>
+    <span class="site-footer__sep" aria-hidden="true">&#183;</span>
     <a href="../kontakt.html" class="site-footer__link">contact</a>
-    <span class="site-footer__sep" aria-hidden="true">·</span>
+    <span class="site-footer__sep" aria-hidden="true">&#183;</span>
     <span>built with vanilla html/css</span>
   </footer>
 
@@ -150,8 +164,8 @@
     Defined BEFORE terminal.js so the engine calls it instead of the
     default banner+help boot. SWAP THIS SCRIPT BLOCK per project —
     update the echo slug, breadcrumb text/href, title, tags, all
-    section content, the gallery comment, the GitHub href, and the
-    form hidden field. Do not change the api.* call structure.
+    section content, the GitHub href, and the form hidden field.
+    Do not change the api.* call structure.
   -->
   <script>
   window.__termBoot = function (api) {
@@ -160,14 +174,14 @@
     var fallback = document.getElementById('proj-content');
     if (fallback) fallback.hidden = true;
 
-    /* ── 0. Echo — as if the user ran: open securevideo ── */
-    api.echo('open securevideo');
+    /* ── 0. Echo — as if the user ran: open example-security ── */
+    api.echo('open example-security');
     api.blank();
 
     /* ── 1. Breadcrumb ── */
     api.appendBlock(
       '<div class="detail-breadcrumb">' +
-        '<span class="detail-breadcrumb__path">~/projects/securevideo</span>' +
+        '<span class="detail-breadcrumb__path">~/projects/example-security</span>' +
         '<a href="../projekte.html" class="detail-breadcrumb__back">&larr;&nbsp;back to projects</a>' +
       '</div>'
     );
@@ -175,20 +189,14 @@
     /* ── 2. Title + category tag + tech tags ── */
     api.appendBlock(
       '<div class="detail-header-row">' +
-        '<span class="detail-title">securevideo</span>' +
+        '<span class="detail-title">example-security</span>' +
         '<span class="proj-card__tag proj-card__tag--security">[security]</span>' +
         '<div class="detail-tech-list">' +
-          '<span class="detail-tech__item">rust</span>' +
-          '<span class="detail-tech__item">python</span>' +
+                    '<span class="detail-tech__item">rust</span>' +
         '</div>' +
       '</div>'
     );
     api.appendBlock('<hr class="term-hr" aria-hidden="true">');
-
-    /* ── Status ── */
-    api.appendBlock(
-      '<div class="term-hint">status: <span class="term-hint__cmd">WIP</span></div>'
-    );
     api.blank();
 
     /* ── 3. Overview ── */
@@ -196,12 +204,9 @@
       '<div class="detail-section">' +
         '<div class="detail-section__label">overview</div>' +
         '<p class="detail-body">' +
-          'SecureVideo is a hardware-backed backup tool for offloading large video and ' +
-          'photo files from a camera or SD card. Running on a LattePanda IOTA single-board ' +
-          'computer, it copies the source to two separate SSDs at once and verifies via ' +
-          'checksum that both copies are uncorrupted and byte-identical &mdash; so footage ' +
-          'can&rsquo;t be silently lost. A collaboration with my brother for his studies at ' +
-          'ETH&nbsp;Zürich.' +
+          'example-security is a sample project entry. Replace this overview with a ' +
+          'short description of your project: what it does, how you built it, ' +
+          'and what makes it interesting.' +
         '</p>' +
       '</div>'
     );
@@ -212,44 +217,65 @@
       '<div class="detail-section">' +
         '<div class="detail-section__label">features</div>' +
         '<ul class="detail-list">' +
-          '<li class="detail-list__item">runs on a LattePanda IOTA single-board computer</li>' +
-          '<li class="detail-list__item">simultaneous copy to two separate SSDs (redundancy)</li>' +
-          '<li class="detail-list__item">checksum verification of every copy against the source</li>' +
-          '<li class="detail-list__item">planned: an Arduino status display, and a possible rewrite in&nbsp;C</li>' +
+          '<li class="detail-list__item">Feature one &mdash; describe a real capability of the project</li>' +
+          '<li class="detail-list__item">Feature two &mdash; another capability</li>' +
+          '<li class="detail-list__item">Feature three &mdash; and one more</li>' +
         '</ul>' +
       '</div>'
     );
     api.blank();
 
-    /* ── 5. Diagram ──────────────────────────────────────────────── */
-    /* Single full-width, self-labelled SVG.                         */
+    /* ── 5. Roadmap ── */
     api.appendBlock(
       '<div class="detail-section">' +
-        '<div class="detail-section__label">diagram</div>' +
-        '<figure class="detail-diagram">' +
-          '<img class="detail-diagram__img" src="../assets/img/securevideo-dataflow.svg" alt="SecureVideo dataflow: SD card to LattePanda to two SSDs with checksum verify" loading="lazy" decoding="async">' +
-        '</figure>' +
+        '<div class="detail-section__label">roadmap</div>' +
+        '<ul class="detail-list">' +
+          '<li class="detail-list__item">Next step one &mdash; replace with a real roadmap item</li>' +
+          '<li class="detail-list__item">Next step two &mdash; or remove this section entirely</li>' +
+        '</ul>' +
       '</div>'
     );
     api.blank();
 
-    /* ── 6. Source link ── */
+    /* ── 6. Screenshots ──────────────────────────────────────────── */
+    /* Images live in assets/img/ and are referenced from projekt/   */
+    /* pages as ../assets/img/<file>. Once you have images, uncomment */
+    /* this block and point href/src/alt/captions at your files.      */
+    /*
+    api.appendBlock(
+      '<div class="detail-section">' +
+        '<div class="detail-section__label">screenshots</div>' +
+        '<div class="detail-shots">' +
+          '<figure class="detail-figure">' +
+            '<a class="detail-figure__link" href="../assets/img/example-security-1.png" target="_blank" rel="noopener">' +
+              '<img class="detail-figure__img" src="../assets/img/example-security-1.png" alt="example-security screenshot" loading="lazy" decoding="async">' +
+            '</a>' +
+            '<figcaption class="detail-figure__caption">replace with a real caption</figcaption>' +
+          '</figure>' +
+        '</div>' +
+      '</div>'
+    );
+    api.blank();
+    */
+
+    /* ── 7. Source link ── */
     api.appendBlock(
       '<div class="detail-section">' +
         '<div class="detail-section__label">source</div>' +
         '<div class="detail-links">' +
-          '<a href="https://github.com/Bxnj/securevideo" class="detail-link-btn" target="_blank" rel="noopener">github</a>' +
+          '<a href="https://github.com/your-username/example-security" class="detail-link-btn"' +
+          '   target="_blank" rel="noopener noreferrer">github &rarr;</a>' +
         '</div>' +
       '</div>'
     );
     api.blank();
 
-    /* ── 7. Inquiry form ── */
+    /* ── 8. Inquiry form ── */
     api.appendBlock(
       '<div class="detail-section">' +
         '<div class="detail-section__label">get in touch about this project</div>' +
         '<form class="detail-form" action="#" method="post">' +
-          '<input type="hidden" name="project" value="securevideo">' +
+          '<input type="hidden" name="project" value="example-security">' +
           '<div class="detail-form__group">' +
             '<label class="detail-form__label" for="inq-name">name</label>' +
             '<input class="detail-form__input" id="inq-name" name="name"' +

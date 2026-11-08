@@ -20,76 +20,39 @@
 
   /* ── Project data ───────────────────────────────────────────── */
 
+  /*
+   * SAMPLE DATA — replace these entries with your real projects.
+   * Keep slugs in sync with the files in projekt/ and with the
+   * semantic fallback articles in projekte.html.
+   */
   var PROJECTS = [
     {
-      slug:     'portygon',
-      title:    'portygon',
-      category: 'security',
-      desc:     'Async TCP port scanner with banner grabbing.',
-      stack:    ['rust', 'tokio']
-    },
-    {
-      slug:     'hydropress',
-      title:    'hydropress',
+      slug:     'example-tools',
+      title:    'example-tools',
       category: 'tools',
-      desc:     'Huffman compression CLI with a custom .h2 format.',
-      stack:    ['rust']
-    },
-    {
-      slug:     'acrux',
-      title:    'acrux',
-      category: 'systems',
-      desc:     'Custom language with a tree-walking interpreter.',
-      stack:    ['rust']
-    },
-    {
-      slug:     'gitpulse',
-      title:    'gitpulse',
-      category: 'tools',
-      desc:     'Scans local git repos for health status.',
+      desc:     'A command-line utility — replace with your own tool.',
       stack:    ['bash']
     },
     {
-      slug:     'dotfiles',
-      title:    'dotfiles',
-      category: 'tools',
-      desc:     'macOS tiling rice: AeroSpace + SketchyBar + kitty.',
-      stack:    ['lua', 'config']
+      slug:     'example-security',
+      title:    'example-security',
+      category: 'security',
+      desc:     'A security utility — replace with your own project.',
+      stack:    ['rust']
     },
     {
-      slug:     'frieren',
-      title:    'frieren',
-      category: 'bots',
-      desc:     'Discord bot that automates weekly T2L reports.',
-      stack:    ['typescript', 'discord.js', 'sqlite']
-    },
-    {
-      slug:     'miriel',
-      title:    'miriel',
-      category: 'bots',
-      desc:     'Discord wiki bot for Elden Ring items & NPCs.',
-      stack:    ['node.js', 'discord.js']
-    },
-    {
-      slug:     'linked-list',
-      title:    'linked-list',
+      slug:     'example-systems',
+      title:    'example-systems',
       category: 'systems',
-      desc:     'Singly + doubly linked lists in Java.',
-      stack:    ['java']
-    },
-    {
-      slug:     'parity-check',
-      title:    'parity-check',
-      category: 'systems',
-      desc:     'Byte-for-byte file comparison.',
+      desc:     'A systems or language project — replace with your own.',
       stack:    ['c']
     },
     {
-      slug:     'securevideo',
-      title:    'securevideo',
-      category: 'security',
-      desc:     'Dual-SSD camera backup with checksum verify.',
-      stack:    ['rust', 'python']
+      slug:     'example-bots',
+      title:    'example-bots',
+      category: 'bots',
+      desc:     'A Discord or chat bot — replace with your own bot.',
+      stack:    ['typescript', 'discord.js']
     }
   ];
 
@@ -349,14 +312,12 @@
 
   var KNOWN = [
     'help', 'ls', 'ls projects',
-    'cd portygon', 'cd hydropress', 'cd acrux', 'cd gitpulse',
-    'cd dotfiles', 'cd frieren', 'cd miriel', 'cd linked-list',
-    'cd parity-check', 'cd securevideo',
+    'cd example-tools', 'cd example-security',
+    'cd example-systems', 'cd example-bots',
     'cd contact', 'cd ..', 'cd ~', 'cd home',
     'filter all', 'filter systems', 'filter security', 'filter tools', 'filter bots',
-    'open portygon', 'open hydropress', 'open acrux', 'open gitpulse',
-    'open dotfiles', 'open frieren', 'open miriel', 'open linked-list',
-    'open parity-check', 'open securevideo',
+    'open example-tools', 'open example-security',
+    'open example-systems', 'open example-bots',
     'contact', 'home', 'clear'
   ];
 

@@ -3,21 +3,33 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>linked-list — kazee72</title>
+  <title>example-bots — your-name</title>
   <link rel="stylesheet" href="../css/tokens.css">
   <link rel="stylesheet" href="../css/base.css">
   <link rel="stylesheet" href="../css/terminal.css">
 </head>
 
-<body class="term-shell" data-base=".." data-parent="../projekte.html" data-project="linked-list">
+<!--
+  TEMPLATE NOTE
+  To turn this sample into a real project page:
+    1. Copy this file, rename it projekt/<your-slug>.html
+    2. Replace every "example-bots" with your project's slug
+    3. Update: <title>, data-project, win-bar title, h1 (visually-hidden)
+    4. Update the semantic <article> (no-JS fallback)
+    5. Update the __termBoot inline script — swap all content blocks
+    6. Set data-base=".." and data-parent="../projekte.html" (always for projekt/ pages)
+  Do not change the shell structure, CSS links, or terminal.js reference.
+-->
 
-  <h1 class="visually-hidden">linked-list — kazee72 Portfolio</h1>
+<body class="term-shell" data-base=".." data-parent="../projekte.html" data-project="example-bots">
+
+  <h1 class="visually-hidden">example-bots — Portfolio</h1>
 
   <!-- ══════════════════════════════════════
        WINDOW TITLE BAR
        ══════════════════════════════════════ -->
   <header class="win-bar" role="banner">
-    <span class="win-bar__title" aria-hidden="true">kaze@portfolio: ~/projects/linked-list</span>
+    <span class="win-bar__title" aria-hidden="true">user@portfolio: ~/projects/example-bots</span>
   </header>
 
 
@@ -38,35 +50,42 @@
       Semantic fallback — accessible without JS, hidden once terminal boots.
       SWAP THIS BLOCK per project: update all text content and href values.
     -->
-    <article id="proj-content" aria-label="linked-list project details">
-      <h2>linked-list</h2>
-      <p>Category: systems &mdash; java</p>
+    <article id="proj-content" aria-label="example-bots project details">
+      <h2>example-bots</h2>
+      <p>Category: bots &mdash; typescript, discord.js</p>
 
       <section>
         <h3>Overview</h3>
-        <p>Hand-written singly and doubly linked list implementations in Java &mdash; a
-           from-scratch data-structures exercise that built an understanding of node-based
-           structures and how references and memory work under the hood.</p>
+        <p>example-bots is a sample project entry. Replace this overview with a
+           short description of your project: what it does, how you built it,
+           and what makes it interesting.</p>
       </section>
 
       <section>
         <h3>Features</h3>
         <ul>
-          <li>singly linked list implementation</li>
-          <li>doubly linked list implementation</li>
-          <li>written entirely from scratch, no library collections</li>
+          <li>Feature one &mdash; describe a real capability of the project</li>
+          <li>Feature two &mdash; another capability</li>
+          <li>Feature three &mdash; and one more</li>
         </ul>
       </section>
 
+      <!--
+        SCREENSHOTS — images live in assets/img/ and are referenced from
+        projekt/ pages as ../assets/img/<file>. When you have images,
+        uncomment this section AND the matching block in the __termBoot
+        script below. See projekt/example-tools.html for the exact markup.
+      -->
+
       <section>
         <h3>Source</h3>
-        <p><a href="https://github.com/kazee72/Linked-List" target="_blank" rel="noopener noreferrer">github.com/kazee72/Linked-List</a></p>
+        <p><a href="https://github.com/your-username/example-bots" target="_blank" rel="noopener noreferrer">github.com/your-username/example-bots</a></p>
       </section>
 
       <section>
         <h3>Get in touch about this project</h3>
         <form action="#" method="post">
-          <input type="hidden" name="project" value="linked-list">
+          <input type="hidden" name="project" value="example-bots">
           <div>
             <label for="fa-inq-name">Name</label>
             <input id="fa-inq-name" type="text" name="name" required autocomplete="name">
@@ -86,7 +105,7 @@
 
     <!-- Live prompt line -->
     <div class="term-prompt-line">
-      <span class="term-prompt-sign" aria-hidden="true">❯</span>
+      <span class="term-prompt-sign" aria-hidden="true">&#10095;</span>
       <label for="term-input" class="visually-hidden">Enter a command</label>
       <input
         class="term-input"
@@ -131,11 +150,11 @@
        SITE FOOTER
        ══════════════════════════════════════ -->
   <footer class="site-footer" role="contentinfo">
-    <a href="https://github.com/kazee72" class="site-footer__link"
-       target="_blank" rel="noopener noreferrer">github.com/kazee72</a>
-    <span class="site-footer__sep" aria-hidden="true">·</span>
+    <a href="https://github.com/your-username" class="site-footer__link"
+       target="_blank" rel="noopener noreferrer">github.com/your-username</a>
+    <span class="site-footer__sep" aria-hidden="true">&#183;</span>
     <a href="../kontakt.html" class="site-footer__link">contact</a>
-    <span class="site-footer__sep" aria-hidden="true">·</span>
+    <span class="site-footer__sep" aria-hidden="true">&#183;</span>
     <span>built with vanilla html/css</span>
   </footer>
 
@@ -145,8 +164,8 @@
     Defined BEFORE terminal.js so the engine calls it instead of the
     default banner+help boot. SWAP THIS SCRIPT BLOCK per project —
     update the echo slug, breadcrumb text/href, title, tags, all
-    section content, the gallery comment, the GitHub href, and the
-    form hidden field. Do not change the api.* call structure.
+    section content, the GitHub href, and the form hidden field.
+    Do not change the api.* call structure.
   -->
   <script>
   window.__termBoot = function (api) {
@@ -155,14 +174,14 @@
     var fallback = document.getElementById('proj-content');
     if (fallback) fallback.hidden = true;
 
-    /* ── 0. Echo — as if the user ran: open linked-list ── */
-    api.echo('open linked-list');
+    /* ── 0. Echo — as if the user ran: open example-bots ── */
+    api.echo('open example-bots');
     api.blank();
 
     /* ── 1. Breadcrumb ── */
     api.appendBlock(
       '<div class="detail-breadcrumb">' +
-        '<span class="detail-breadcrumb__path">~/projects/linked-list</span>' +
+        '<span class="detail-breadcrumb__path">~/projects/example-bots</span>' +
         '<a href="../projekte.html" class="detail-breadcrumb__back">&larr;&nbsp;back to projects</a>' +
       '</div>'
     );
@@ -170,10 +189,11 @@
     /* ── 2. Title + category tag + tech tags ── */
     api.appendBlock(
       '<div class="detail-header-row">' +
-        '<span class="detail-title">linked-list</span>' +
-        '<span class="proj-card__tag proj-card__tag--systems">[systems]</span>' +
+        '<span class="detail-title">example-bots</span>' +
+        '<span class="proj-card__tag proj-card__tag--bots">[bots]</span>' +
         '<div class="detail-tech-list">' +
-          '<span class="detail-tech__item">java</span>' +
+                    '<span class="detail-tech__item">typescript</span>' +
+          '<span class="detail-tech__item">discord.js</span>' +
         '</div>' +
       '</div>'
     );
@@ -185,9 +205,9 @@
       '<div class="detail-section">' +
         '<div class="detail-section__label">overview</div>' +
         '<p class="detail-body">' +
-          'Hand-written singly and doubly linked list implementations in Java &mdash; a ' +
-          'from-scratch data-structures exercise that built an understanding of node-based ' +
-          'structures and how references and memory work under the hood.' +
+          'example-bots is a sample project entry. Replace this overview with a ' +
+          'short description of your project: what it does, how you built it, ' +
+          'and what makes it interesting.' +
         '</p>' +
       '</div>'
     );
@@ -198,44 +218,65 @@
       '<div class="detail-section">' +
         '<div class="detail-section__label">features</div>' +
         '<ul class="detail-list">' +
-          '<li class="detail-list__item">singly linked list implementation</li>' +
-          '<li class="detail-list__item">doubly linked list implementation</li>' +
-          '<li class="detail-list__item">written entirely from scratch, no library collections</li>' +
+          '<li class="detail-list__item">Feature one &mdash; describe a real capability of the project</li>' +
+          '<li class="detail-list__item">Feature two &mdash; another capability</li>' +
+          '<li class="detail-list__item">Feature three &mdash; and one more</li>' +
         '</ul>' +
       '</div>'
     );
     api.blank();
 
-    /* ── 5. Diagram ──────────────────────────────────────────────── */
-    /* Single full-width, self-labelled SVG.                         */
+    /* ── 5. Roadmap ── */
     api.appendBlock(
       '<div class="detail-section">' +
-        '<div class="detail-section__label">diagram</div>' +
-        '<figure class="detail-diagram">' +
-          '<img class="detail-diagram__img" src="../assets/img/linked-list-nodes.svg" alt="singly and doubly linked list node diagrams" loading="lazy" decoding="async">' +
-        '</figure>' +
+        '<div class="detail-section__label">roadmap</div>' +
+        '<ul class="detail-list">' +
+          '<li class="detail-list__item">Next step one &mdash; replace with a real roadmap item</li>' +
+          '<li class="detail-list__item">Next step two &mdash; or remove this section entirely</li>' +
+        '</ul>' +
       '</div>'
     );
     api.blank();
 
-    /* ── 6. Source link ── */
+    /* ── 6. Screenshots ──────────────────────────────────────────── */
+    /* Images live in assets/img/ and are referenced from projekt/   */
+    /* pages as ../assets/img/<file>. Once you have images, uncomment */
+    /* this block and point href/src/alt/captions at your files.      */
+    /*
+    api.appendBlock(
+      '<div class="detail-section">' +
+        '<div class="detail-section__label">screenshots</div>' +
+        '<div class="detail-shots">' +
+          '<figure class="detail-figure">' +
+            '<a class="detail-figure__link" href="../assets/img/example-bots-1.png" target="_blank" rel="noopener">' +
+              '<img class="detail-figure__img" src="../assets/img/example-bots-1.png" alt="example-bots screenshot" loading="lazy" decoding="async">' +
+            '</a>' +
+            '<figcaption class="detail-figure__caption">replace with a real caption</figcaption>' +
+          '</figure>' +
+        '</div>' +
+      '</div>'
+    );
+    api.blank();
+    */
+
+    /* ── 7. Source link ── */
     api.appendBlock(
       '<div class="detail-section">' +
         '<div class="detail-section__label">source</div>' +
         '<div class="detail-links">' +
-          '<a href="https://github.com/kazee72/Linked-List" class="detail-link-btn"' +
+          '<a href="https://github.com/your-username/example-bots" class="detail-link-btn"' +
           '   target="_blank" rel="noopener noreferrer">github &rarr;</a>' +
         '</div>' +
       '</div>'
     );
     api.blank();
 
-    /* ── 7. Inquiry form ── */
+    /* ── 8. Inquiry form ── */
     api.appendBlock(
       '<div class="detail-section">' +
         '<div class="detail-section__label">get in touch about this project</div>' +
         '<form class="detail-form" action="#" method="post">' +
-          '<input type="hidden" name="project" value="linked-list">' +
+          '<input type="hidden" name="project" value="example-bots">' +
           '<div class="detail-form__group">' +
             '<label class="detail-form__label" for="inq-name">name</label>' +
             '<input class="detail-form__input" id="inq-name" name="name"' +

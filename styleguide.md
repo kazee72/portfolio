@@ -1,4 +1,4 @@
-# Styleguide — M293 Portfolio
+# Styleguide
 
 Das gesamte Design-System ist zentral in `css/tokens.css` als CSS-Custom-Properties
 definiert. Alle weiteren Stylesheets greifen ausschliesslich über `var(--token)`
